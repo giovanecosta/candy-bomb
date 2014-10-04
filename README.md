@@ -1,4 +1,4 @@
-candy-bomb
+Polyiigon
 ==========
 
-Candy Bomb Framework
+Polyiigon Framework
