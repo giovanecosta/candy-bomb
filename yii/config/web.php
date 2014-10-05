@@ -40,6 +40,11 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
     ],
     'params' => $params,
+    'modules' => [
+        'factory' => [
+            'class' => 'yii\modules\factory\Factory',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
@@ -50,5 +55,6 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
 }
+
 
 return $config;
