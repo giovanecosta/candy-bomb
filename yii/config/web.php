@@ -42,7 +42,7 @@ $config = [
     'params' => $params,
     'modules' => [
         'factory' => [
-            'class' => 'yii\modules\factory\Factory',
+            'class' => 'app\modules\factory\Factory',
         ],
     ],
 ];
