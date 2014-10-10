@@ -24,6 +24,7 @@ class FactoryAsset extends AssetBundle
         'js/angular.js',
         'factory/js/base.js',
         'factory/js/controllers/test.js',
+        'factory/js/controllers/module_template.js',
     ];
     public $depends = [
     ];
