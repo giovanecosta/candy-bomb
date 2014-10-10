@@ -12,7 +12,7 @@ use Yii;
  * @property string $schema_field
  * @property string $flag
  */
-class PolyiigonSmartFields extends \yii\db\ActiveRecord
+class PolyiigonSmartFields extends \yii\db\ActiveRecord implements yii\db\ActiveRecordInterface
 {
     /**
      * @inheritdoc
