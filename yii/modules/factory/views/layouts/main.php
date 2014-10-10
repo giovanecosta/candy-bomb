@@ -18,7 +18,7 @@ FactoryAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body ng-controller="TestController">
+<body ng-controller="ModuleTemplateCtrl">
 
 <?php $this->beginBody() ?>
     <div class="wrap">
@@ -26,9 +26,8 @@ FactoryAsset::register($this);
         <div class="container">
             <p>Opa!</p>
             <ul>
-                <li ng-repeat="phone in phones">
-                    {{phone.name}}
-                    <p>{{phone.snippet}}</p>
+                <li ng-repeat="field in fields">
+                    <p>{{field.title}} - {{field.flag}}</p>
                 </li>
             </ul>
 
