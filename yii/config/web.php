@@ -42,9 +42,9 @@ $config = [
             'enablePrettyUrl' => true,
             //'enableStrictParsing' => true,
             'showScriptName' => false,
-            'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'factory/polyiigon-smart-field'],
-            ],
+            //'rules' => [
+            //    '\w+.json' => ['class' => 'yii\rest\UrlRule', 'controller' => 'factory/polyiigon-smart-field'],
+            //],
         ],
     ],
     'params' => $params,
