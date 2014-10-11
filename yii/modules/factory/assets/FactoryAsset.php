@@ -18,13 +18,13 @@ class FactoryAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'factory/css/base.css',
+        'modules/factory/css/base.css',
     ];
     public $js = [
         'js/angular.js',
-        'factory/js/base.js',
-        'factory/js/controllers/test.js',
-        'factory/js/controllers/module_template.js',
+        'modules/factory/js/base.js',
+        'modules/factory/js/controllers/test.js',
+        'modules/factory/js/controllers/module_template.js',
     ];
     public $depends = [
     ];
