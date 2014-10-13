@@ -27,5 +27,6 @@ class FactoryAsset extends AssetBundle
         'modules/factory/js/controllers/module_template.js',
     ];
     public $depends = [
+        'yii\bootstrap\BootstrapAsset'
     ];
 }
