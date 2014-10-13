@@ -26,8 +26,12 @@ FactoryAsset::register($this);
         <div class="container">
             <p>Opa!</p>
             <ul>
-                <li ng-repeat="field in fields">
-                    <p>{{field.title}} - {{field.flag}}</p>
+                <li ng-repeat="field in fields" >
+                    {{$index}} - <select ng-model="field.smartField" ng-options="sf.title for sf in smartFields"></select>
+                </li>
+                <li>
+                    <button ng-click="fields.push({})">+</button>
+                    <button ng-click="doIt()">Do it!</button>
                 </li>
             </ul>
 
