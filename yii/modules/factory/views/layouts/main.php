@@ -25,15 +25,28 @@ FactoryAsset::register($this);
 
         <div class="container">
             <p>Opa!</p>
-            <ul>
-                <li ng-repeat="field in fields" >
-                    {{$index}} - <select ng-model="field.smartField" ng-options="sf.title for sf in smartFields"></select>
-                </li>
-                <li>
-                    <button ng-click="fields.push({})">+</button>
-                    <button ng-click="doIt()">Do it!</button>
-                </li>
-            </ul>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group" ng-repeat="field in fields">
+                    <label class="col-sm-2 control-label">Campo {{$index}}</label>
+                    <div class="row col-sm-10">
+                        <div class="col-xs-2">
+                            <label for="mtFieldName{{$index}}">Nome</label>
+                            <input type="text" class="form-control" id="mtFieldName{{$index}}" placeholder="Nome">
+                        </div>
+                        <div class="col-xs-2">
+                            <label for="mtFieldSF{{$index}}">Tipo</label>
+                            <select id="mtFieldSF{{$index}}" class="form-control" ng-model="field.smartField" ng-options="sf.title for sf in smartFields"></select>
+                        </div>
+                        <p class="help-block">Selecione um tipo.</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button ng-click="fields.push({})" class="btn btn-default">+</button>
+                    <button ng-click="doIt()" class="btn btn-default">Do it!</button>
+                </div>
+            </form>
 
         </div>
     </div>
