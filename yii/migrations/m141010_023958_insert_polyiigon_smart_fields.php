@@ -25,6 +25,8 @@ class m141010_023958_insert_polyiigon_smart_fields extends Migration
     			array('Tags', 'TYPE_STRING', 'tags'),
     			array('Link', 'TYPE_STRING', 'link'),
     			array('Vídeo', 'TYPE_STRING', 'video'),
+                array('Idioma', 'TYPE_STRING', 'language'),
+                array('Slug', 'TYPE_STRING', 'slug'),
     		)
     	);
     }
