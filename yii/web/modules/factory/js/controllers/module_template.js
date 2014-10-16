@@ -6,7 +6,7 @@ factoryApp.controller('ModuleTemplateCtrl', function ($scope, $http) {
 
 	$http.get('polyiigon-smart-field').success(function(data) {
 
-		$scope.smartFields = data;
+		$scope.smartFields = data.sort(function(a, b){ return (a.title == b.title) ? 0 : (a.title > b.title ? 1 : -1); });
 	});
 
 	$scope.doIt = function(){
