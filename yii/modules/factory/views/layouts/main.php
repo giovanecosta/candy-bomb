@@ -34,7 +34,7 @@ FactoryAsset::register($this);
                     <div class="row col-sm-10">
                         <div class="col-xs-3">
                             <label for="mtFieldName{{$index}}">Nome</label>
-                            <input type="text" class="form-control" id="mtFieldName{{$index}}" placeholder="Nome">
+                            <input type="text" class="form-control" ng-model="field.name" id="mtFieldName{{$index}}" placeholder="Nome">
                         </div>
                         <div class="col-xs-2">
                             <label for="mtFieldSF{{$index}}">Tipo</label>
@@ -46,11 +46,14 @@ FactoryAsset::register($this);
                 <div class="form-group">
                     <label class="col-sm-2 control-label"> &nbsp; </label>
                     <div class="row col-sm-10">
-                        <div class="col-xs-8">
+                        <div class="col-xs-6">
                             <button ng-click="doIt()" class="btn btn-default">Do it!</button>
                         </div>
                         <div class="col-xs-2">
                             <button ng-click="fields.push({})" class="btn btn-default">Adicionar</button>
+                        </div>
+                        <div class="col-xs-2">
+                            <button ng-click="save()" class="btn btn-default">Salvar</button>
                         </div>
                     </div>
                 </div>
