@@ -7,8 +7,8 @@ class m141010_023958_insert_polyiigon_smart_fields extends Migration
 {
     public function up()
     {
-    	$this->batchInsert('polyiigon_smart_fields',
-    		array('title', 'schema_field', 'flag'),
+    	$this->batchInsert('polyiigon_smart_field',
+    		array('title', 'schema_field', 'slug'),
     		array(
     			array('Texto Simples', 'TYPE_STRING', 'simple-text'),
     			array('Texto Sugerido', 'TYPE_STRING', 'autocomplete-text'),
@@ -33,6 +33,6 @@ class m141010_023958_insert_polyiigon_smart_fields extends Migration
 
     public function down()
     {
-        $this->truncateTable('polyiigon_smart_fields');
+        $this->truncateTable('polyiigon_smart_field');
     }
 }
