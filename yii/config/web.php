@@ -10,6 +10,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ybdu3b38f43hf8BYBii8b-U532n',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -42,9 +45,10 @@ $config = [
             'enablePrettyUrl' => true,
             //'enableStrictParsing' => true,
             'showScriptName' => false,
-            //'rules' => [
+            'rules' => [
+                'POST <controller:\w+>s' => '<controller>/create'
             //    '\w+.json' => ['class' => 'yii\rest\UrlRule', 'controller' => 'factory/polyiigon-smart-field'],
-            //],
+            ],
         ],
     ],
     'params' => $params,
