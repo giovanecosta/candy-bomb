@@ -13,11 +13,12 @@ factoryApp.controller('ModuleTemplateCtrl', function ($scope, $http) {
 
 		if ($scope.moduleTemplateForm.$valid){
 			data = {
-				name: 'Teste',
-				fields: $scope.fields
+				title: 'Teste',
+				slug:'dfsdfsf',
+				//fields: $scope.fields
 			}
 
-			$http.post('polyiigon-module-template', data).success(function(data) {
+			$http.post('polyiigon-module-template/create', data).success(function(data) {
 				console.log(data);
 			});
 		} else {
