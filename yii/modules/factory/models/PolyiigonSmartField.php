@@ -10,7 +10,9 @@ use Yii;
  * @property integer $id
  * @property string $title
  * @property string $schema_field
- * @property string $flag
+ * @property string $slug
+ *
+ * @property PolyiigonModuleTemplateField[] $polyiigonModuleTemplateFields
  */
 class PolyiigonSmartField extends \yii\db\ActiveRecord implements yii\db\ActiveRecordInterface
 {
@@ -28,9 +30,9 @@ class PolyiigonSmartField extends \yii\db\ActiveRecord implements yii\db\ActiveR
     public function rules()
     {
         return [
-            [['title', 'schema_field', 'flag'], 'required'],
-            [['title', 'schema_field', 'flag'], 'string', 'max' => 255],
-            [['flag'], 'unique']
+            [['title', 'schema_field', 'slug'], 'required'],
+            [['title', 'schema_field', 'slug'], 'string', 'max' => 255],
+            [['slug'], 'unique']
         ];
     }
 
@@ -43,7 +45,15 @@ class PolyiigonSmartField extends \yii\db\ActiveRecord implements yii\db\ActiveR
             'id' => 'ID',
             'title' => 'Title',
             'schema_field' => 'Schema Field',
-            'flag' => 'Flag',
+            'slug' => 'Slug',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPolyiigonModuleTemplateFields()
+    {
+        return $this->hasMany(PolyiigonModuleTemplateField::className(), ['polyiigon_smart_field_id' => 'id']);
     }
 }
