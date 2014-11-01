@@ -29,7 +29,7 @@ FactoryAsset::register($this);
         <div class="menu">
             <ul>
                 <li><a href="#/module_template">Module Template</a></li>
-                <li><a href="#/module_template">Modules</a></li>
+                <li><a href="#/module">Modules</a></li>
             </ul>
         </div>
 
