@@ -1,0 +1,1 @@
+var factoryApp = angular.module('FactoryApp', ['slugifier', 'ngRoute']);
