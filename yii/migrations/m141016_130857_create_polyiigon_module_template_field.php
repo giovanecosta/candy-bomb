@@ -17,9 +17,9 @@ class m141016_130857_create_polyiigon_module_template_field extends Migration
             'polyiigon_module_template_id' => Schema::TYPE_INTEGER . ' NOT NULL',
         ]);
         // smart field
-        $this->addForeignKey('polyiigon_mtf_polyiigon_sf_fk', 'polyiigon_module_template_field', 'polyiigon_smart_field_id', 'polyiigon_smart_field', 'id');
+        $this->addForeignKey('polyiigon_mtf_polyiigon_sf_fk', 'polyiigon_module_template_field', 'polyiigon_smart_field_id', 'polyiigon_smart_field', 'id', 'CASCADE', 'CASCADE');
         // module template
-        $this->addForeignKey('polyiigon_mtf_polyiigon_mt_fk', 'polyiigon_module_template_field', 'polyiigon_module_template_id', 'polyiigon_module_template', 'id');
+        $this->addForeignKey('polyiigon_mtf_polyiigon_mt_fk', 'polyiigon_module_template_field', 'polyiigon_module_template_id', 'polyiigon_module_template', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
