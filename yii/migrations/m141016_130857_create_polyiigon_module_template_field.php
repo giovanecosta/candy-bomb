@@ -11,6 +11,8 @@ class m141016_130857_create_polyiigon_module_template_field extends Migration
             'id' => 'pk',
             // Just the name of the field in template
             'title' => Schema::TYPE_STRING . ' NOT NULL',
+            // slug
+            'slug' => Schema::TYPE_STRING . ' NOT NULL',
             // Smart field
             'polyiigon_smart_field_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             // Template table

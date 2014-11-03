@@ -11,6 +11,8 @@ class m141029_125204_create_polyiigon_module_field extends Migration
             'id' => 'pk',
             // Just the name of the field
             'title' => Schema::TYPE_STRING . ' NOT NULL',
+            // enabled flag
+            'enabled' => Schema::TYPE_BOOLEAN . ' NOT NULL',
             // Template field
             'polyiigon_module_template_field_id' => Schema::TYPE_INTEGER . ' NOT NULL',
             // Module table
