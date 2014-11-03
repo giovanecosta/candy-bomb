@@ -31,9 +31,9 @@ class PolyiigonModuleTemplateField extends \yii\db\ActiveRecord implements yii\d
     public function rules()
     {
         return [
-            [['title', 'polyiigon_smart_field_id', 'polyiigon_module_template_id'], 'required'],
+            [['title', 'slug', 'polyiigon_smart_field_id', 'polyiigon_module_template_id'], 'required'],
             [['polyiigon_smart_field_id', 'polyiigon_module_template_id'], 'integer'],
-            [['title'], 'string', 'max' => 255]
+            [['title', 'slug'], 'string', 'max' => 255]
         ];
     }
 
@@ -45,6 +45,7 @@ class PolyiigonModuleTemplateField extends \yii\db\ActiveRecord implements yii\d
         return [
             'id' => 'ID',
             'title' => 'Title',
+            'slug' => 'Slug',
             'polyiigon_smart_field_id' => 'Polyiigon Smart Field ID',
             'polyiigon_module_template_id' => 'Polyiigon Module Template ID',
         ];
