@@ -21,6 +21,10 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/angular.js',
+        'js/angular-route.js',
+        'js/angular-slugify.js',
+        'js/underscore-min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
