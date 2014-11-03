@@ -1,5 +1,5 @@
 
-factoryApp.controller('ModuleTemplateCtrl', function ($scope, $http, $routeParams, $location, Slug) {
+factoryApp.controller('ModuleTemplateCtrl', function ($scope, $http, $routeParams, $location, $q, Slug) {
 
 	$scope.fields = [{}];
 
@@ -41,21 +41,26 @@ factoryApp.controller('ModuleTemplateCtrl', function ($scope, $http, $routeParam
 			$http.post('polyiigon-module-template/create', data).success(function(data) {
 				mtId = data.id;
 
+				promises = [];
+
 				for (f of $scope.fields){
 					fieldData = {
 						title: f.title,
+						slug: Slug.slugify(f.title),
 						polyiigon_smart_field_id: f.smartField.id,
 						polyiigon_module_template_id: mtId
 					};
 					if (f.id){
 						fieldData.id = f.id
 					}
-					$http.post('polyiigon-module-template-field/create', fieldData).success(function(data) {
-						console.log(data);
-						$location.path('/');
-					});
+					promises.push( $http.post('polyiigon-module-template-field/create', fieldData) );
+						
 				}
 
+				$q.all(promises).then(function(data){
+					console.log(data);
+					$location.path('/module_template');
+				});
 			});
 		} else {
 
