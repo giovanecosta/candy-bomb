@@ -21,15 +21,12 @@ class FactoryAsset extends AssetBundle
         'modules/factory/css/base.css',
     ];
     public $js = [
-        'js/angular.js',
-        'js/angular-route.js',
-        'js/angular-slugify.js',
         'modules/factory/js/app.js',
         'modules/factory/js/route.js',
         'modules/factory/js/controllers/module.js',
         'modules/factory/js/controllers/module_template.js',
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset'
+        'app\assets\AppAsset',
     ];
 }
