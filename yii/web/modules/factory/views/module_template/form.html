@@ -20,6 +20,9 @@
                 <label for="mtFieldSF{{$index}}">Tipo</label>
                 <select id="mtFieldSF{{$index}}" class="form-control" ng-model="field.smartField" ng-options="sf.title for sf in smartFields | orderBy: 'title'" required></select>
             </div>
+            <div class="col-xs-1">
+                <button ng-click="fields.splice($index, 1)">X</button>
+            </div>
         </div>
     </div>
     
