@@ -10,6 +10,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ybdu3b38f43hf8BYBii8b-U532n',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -38,8 +41,22 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            //'enableStrictParsing' => true,
+            'showScriptName' => false,
+            'rules' => [
+                'POST <controller:\w+>s' => '<controller>/create'
+            //    '\w+.json' => ['class' => 'yii\rest\UrlRule', 'controller' => 'factory/polyiigon-smart-field'],
+            ],
+        ],
     ],
     'params' => $params,
+    'modules' => [
+        'factory' => [
+            'class' => 'app\modules\factory\Factory',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
@@ -50,5 +67,6 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
 }
+
 
 return $config;
